@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+public:
+    // Function to check if given number n is a power of two
+    bool isPowerofTwo(long long n)
+    {
+        {
+            if (n == 0)
+                return 0;
+            while (n != 1) // return true if n=1 cause 1 is the only odd number wgich is power of 2
+            {
+                if (n % 2 != 0) // if its 0 then its power of 2 return true(1)
+                    return 0;
+                n = n / 2;
+            }
+            return 1;
+        }
+    }
+};
+
+int main()
+{
+
+    int t;
+    cin >> t; // testcases
+
+    for (int i = 0; i < t; i++)
+    {
+        long long n; // input a number n
+        cin >> n;
+
+        Solution ob;
+        if (ob.isPowerofTwo(n))
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+
+    return 0;
+}
